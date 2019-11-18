@@ -9,7 +9,8 @@ pipeline {
 		}
 		stage ('Verify') {
 			steps { 
-				python --help 
+				echo GIT_COMMIT 
+				sh 'git show --name-only --oneline HEAD'
 				//sh 'git diff ${GIT_COMMIT} ${GIT_PREVIOUS_SUCCESSFUL_COMMIT}'
 				}
 			}

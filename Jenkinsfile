@@ -4,7 +4,7 @@ pipeline {
 		stage ('Verify') {
 			steps { 
 				echo "Verifying the json"
-				sh 'git status'
+				sh 'git show --name-only --oneline HEAD^^..HEAD | grep json'
 				}
 			}
 		stage ('Package') {

@@ -10,6 +10,7 @@ pipeline {
 		stage ('Verify') {
 			steps { 
 				echo "Verifying the json"
+				echo GIT_COMMIT
 				}
 			}
 		stage ('Package') {

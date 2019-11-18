@@ -11,8 +11,7 @@ pipeline {
 			steps { 
 				//echo GIT_COMMIT 
 				//sh 'git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT}'
-				environment 
-				{
+				environment {
 				 fileName = sh (script :"git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT}",returnStdout: true)
 				}
 				//echo fileName

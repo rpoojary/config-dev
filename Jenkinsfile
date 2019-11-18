@@ -10,7 +10,7 @@ pipeline {
 		stage ('Verify') {
 			steps { 
 				echo GIT_COMMIT 
-				def fileName = sh 'git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT}'
+				fileName = sh 'git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT}'
 				echo fileName
 				//sh 'git diff ${GIT_COMMIT} ${GIT_PREVIOUS_SUCCESSFUL_COMMIT}'
 				}

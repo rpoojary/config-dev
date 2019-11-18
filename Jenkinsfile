@@ -10,7 +10,7 @@ pipeline {
 		stage ('Verify') {
 			steps { 
 				echo "Verifying the json"
-				echo GIT_COMMIT
+				sh 'git diff GIT_COMMIT GIT_PREVIOUS_SUCCESSFUL_COMMIT'
 				}
 			}
 		stage ('Package') {

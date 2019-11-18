@@ -4,7 +4,7 @@ pipeline {
 		stage ('Verify') {
 			steps { 
 				echo "Verifying the json"
-				git(status)
+				sh 'git status'
 				}
 			}
 		stage ('Package') {

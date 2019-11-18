@@ -10,7 +10,7 @@ pipeline {
 		stage ('Verify') {
 			steps { 
 				echo GIT_COMMIT 
-				sh 'git show --name-only --oneline HEAD'
+				sh 'git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT}'
 				//sh 'git diff ${GIT_COMMIT} ${GIT_PREVIOUS_SUCCESSFUL_COMMIT}'
 				}
 			}

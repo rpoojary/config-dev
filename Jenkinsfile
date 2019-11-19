@@ -2,7 +2,7 @@ pipeline {
 	
 	agent any 
 	environment {
-		fileName = ""
+		fileName = "Rohan"
 	}
 	stages {
 		stage ('Checkout') {

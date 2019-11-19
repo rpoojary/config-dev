@@ -1,12 +1,6 @@
 pipeline {
 	agent any 
 	stages {
-		stage ('Checkout') {
-			steps {
-				echo "Git SCM"
-				checkout scm
-				}
-		}
 		stage ('Verify') {
 			steps {
 				sh '''

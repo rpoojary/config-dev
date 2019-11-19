@@ -15,9 +15,9 @@ pipeline {
 				workSpace=`pwd`;
 				for i in `git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT}` ;do 
 				if python -m json.tool < $workSpace/$i  ; then 
-					echo "Rohan Is Great " ; 
+					echo "$i : is a Valid json File  " ; 
 				else 
-					echo "Rohan is Dumb ";
+					echo "$i : is Not a Valid json File  ";
 				fi
 				done
 				'''

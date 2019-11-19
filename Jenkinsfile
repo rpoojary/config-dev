@@ -11,9 +11,9 @@ pipeline {
 			steps {
 				sh '''
 				#!/bin/sh
+				set +x 
 				workSpace=`pwd`;
 				for i in `git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT}` ;do 
-				echo $i ; 
 				if python -m json.tool < $workSpace/$i  ; then 
 					echo "Rohan Is Great " ; 
 				else 

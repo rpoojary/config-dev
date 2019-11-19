@@ -13,11 +13,13 @@ pipeline {
 		}
 		stage ('Verify') {
 			steps {
-				script {
-					sh 'git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT}'
-					env.fileName = sh 'git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT}'
-					echo "${env.fileName}"
-					}
+				sh """
+				#!/bin/sh
+				 MyVar=$(git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT})
+				
+				
+							
+				"""
 			      }
 			
 			}

@@ -16,6 +16,7 @@ pipeline {
 				sh '''
 				#!/bin/sh
 				 MyVar=$(git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT})
+				 echo $MyVAR
 						
 				'''
 		      }

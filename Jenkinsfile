@@ -14,7 +14,7 @@ pipeline {
 				workSpace=`pwd`;
 				for i in `git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT}` ;do 
 				echo $i ; 
-				if [ python -m json.tool < $workspace/$i] ; then 
+				if [ python -m json.tool < $workSpace/$i] ; then 
 					echo "Rohan Is Great " ; 
 				else 
 					echo "Rohan is Dumb ";

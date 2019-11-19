@@ -14,7 +14,9 @@ pipeline {
 				//echo GIT_COMMIT 
 				//sh 'git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT}'
 				//sh 'git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT}'
+			steps {
 				TEST = sh ( script:'git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT}', returnStdout: true)
+			}
 				//echo $Test
 				//echo Test
 			        //echo fileName

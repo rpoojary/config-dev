@@ -10,7 +10,7 @@ pipeline {
 		stage ('Verify') {
 			steps {
 				sh '''
-				errorStatus = 0
+				errorStatus=0
 				#!/bin/sh
 				set +x +e
 				workSpace=`pwd`;
@@ -20,7 +20,7 @@ pipeline {
 						echo "$i : is a Valid json File  " ;
 					else 
 						echo "$i : is Not a Valid json File  ";
-						errorStatus = 1
+						errorStatus=1
                                 	fi
 			      	done
 				if [ $errorStatus -eq 0 ] ; then continue ; else exit 1 ; fi  

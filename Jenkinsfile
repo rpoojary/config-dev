@@ -1,5 +1,7 @@
+def TEST = []
+
 pipeline {
-	def TEST = []
+	
 	agent any 
 	stages {
 		stage ('Checkout') {

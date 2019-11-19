@@ -13,6 +13,7 @@ pipeline {
 				#!/bin/sh
 				#MyVar=$(git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT})
 				#echo "$MyVAR"
+				echo `pwd`;
 				for i in `git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT}` ;do 
 				echo $i ; 
 				if [ python -m json.tool < $i] ; then 

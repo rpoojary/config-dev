@@ -15,7 +15,7 @@ pipeline {
 			steps {
 				script {
 					env.fileName = 'git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT}'
-					//echo "${env.fileName}"
+					echo "${env.fileName}"
 					}
 			      }
 			

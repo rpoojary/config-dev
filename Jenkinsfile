@@ -11,7 +11,10 @@ pipeline {
 			steps { 
 				//echo GIT_COMMIT 
 				//sh 'git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT}'
-				sh 'git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT}'
+				//sh 'git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT}'
+				TEST = sh ( script: """ git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT} """, returnStdout: true)
+				echo $Test
+				echo Test
 			        //echo fileName
 				//sh 'git diff ${GIT_COMMIT} ${GIT_PREVIOUS_SUCCESSFUL_COMMIT}'
 				}
@@ -28,3 +31,5 @@ pipeline {
 		}
 	}
 }
+
+

@@ -18,7 +18,8 @@ pipeline {
 				#MyVar=$(git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT})
 				#echo "$MyVAR"
 				for i in `git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT` ;do 
-					echo $i 
+					echo $i ; done
+					
 				'''
 		      }
 		}

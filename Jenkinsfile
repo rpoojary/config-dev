@@ -14,7 +14,7 @@ pipeline {
 		stage ('Verify') {
 			steps {
 				script {
-					git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT}
+					'git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT}'
 					env.fileName = 'git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT}'
 					
 					}

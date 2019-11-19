@@ -13,16 +13,13 @@ pipeline {
 		}
 		stage ('Verify') {
 			steps {
-				sh """
+				sh '''
 				#!/bin/sh
 				 MyVar=$(git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT})
-				
-				
-							
-				"""
-			      }
-			
-			}
+						
+				'''
+		      }
+		}
 		stage ('Package') {
 			steps {
 				echo "Packaging the Config"

@@ -11,12 +11,10 @@ pipeline {
 			steps {
 				sh '''
 				#!/bin/sh
-				#MyVar=$(git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT})
-				#echo "$MyVAR"
-				echo `pwd`;
+				workSpace=`pwd`;
 				for i in `git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT}` ;do 
 				echo $i ; 
-				if [ python -m json.tool < $i] ; then 
+				if [ python -m json.tool < $workspace/$i] ; then 
 					echo "Rohan Is Great " ; 
 				else 
 					echo "Rohan is Dumb ";

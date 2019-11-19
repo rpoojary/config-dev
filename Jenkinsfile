@@ -14,7 +14,11 @@ pipeline {
 				#MyVar=$(git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT})
 				#echo "$MyVAR"
 				for i in `git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT}` ;do 
-				python -m json.tool < $i ; done
+				echo $i ; 
+				if [ python -m json.tool < $i] ; then 
+					echo "Rohan Is Great " ; 
+				else 
+					echo "Rohan is Dumb "; done
 				'''
 		      }
 		}

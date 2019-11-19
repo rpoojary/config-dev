@@ -18,7 +18,9 @@ pipeline {
 				if [ python -m json.tool < $i] ; then 
 					echo "Rohan Is Great " ; 
 				else 
-					echo "Rohan is Dumb "; done
+					echo "Rohan is Dumb ";
+				fi
+				done
 				'''
 		      }
 		}

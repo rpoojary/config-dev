@@ -14,10 +14,9 @@ pipeline {
 		stage ('Verify') {
 			steps {
 				script {
-					env.fileName = sh ( script:'git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT}', returnStdout: true)
-					echo "${env.fileName}"
-				
-				}
+					env.fileName = 'git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT}'
+					//echo "${env.fileName}"
+					}
 			      }
 			
 			}

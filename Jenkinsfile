@@ -20,7 +20,7 @@ pipeline {
 				env.fileName = sh ( script:'git diff-tree --no-commit-id --name-only -r ${GIT_COMMIT}', returnStdout: true)
 				}
 			}
-				//echo $Test
+				echo $env.fileName
 				//echo Test
 			        //echo fileName
 				//sh 'git diff ${GIT_COMMIT} ${GIT_PREVIOUS_SUCCESSFUL_COMMIT}'
